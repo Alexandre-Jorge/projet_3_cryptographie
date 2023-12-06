@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+    color : white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 400px;
+    height: 15vh;
+}
+
+input{
+    height: 30px;
+}
