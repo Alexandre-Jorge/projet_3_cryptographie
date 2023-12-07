@@ -8,15 +8,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Jack Sparrhum</title>
 </head>
 <body>
     <h1>Jack Sparrhum</h1>
     <div id="inputs">
         <h2>Verify prodcut autenticity</h2>
         <form action="index.php" method="post" onsubmit="return check()">
-            <input type="text" name="uid" id="uid" placeholder="11:22:aa:bb" required>
-            <input type="text" name="hash" id="hash" placeholder="SHA-256" required>
+            <?php
+                if(isset($_GET['uid'])){
+                    $uid = $_GET['uid'];
+                    echo '<input type="text" name="uid" id="uid" placeholder="11:22:aa:bb" value="'.$uid.'" required>';
+                } else {
+                    echo '<input type="text" name="uid" id="uid" placeholder="11:22:aa:bb" required>';
+                }
+                if(isset($_GET['hash'])){
+                    $hash = $_GET['hash'];
+                    echo '<input type="text" name="hash" id="hash" placeholder="SHA-256" value="'.$hash.'" required>';
+                } else {
+                    echo '<input type="text" name="hash" id="hash" placeholder="SHA-256" required>';
+                }
+            ?>
             <input type="submit" value="Verify">
         </form>
     </div>
